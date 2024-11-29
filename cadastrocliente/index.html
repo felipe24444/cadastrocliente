@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .success-message {
+            margin-top: 20px;
+            color: green;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Cadastro de Cliente</h2>
+        <form id="formCadastro" onsubmit="enviarFormulario(event)">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div id="mensagemSucesso" class="success-message" style="display: none;">
+            Enviado com sucesso!
+        </div>
+    </div>
+
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();  // Impede o envio do formulário (comportamento padrão)
+
+            // Aqui você pode adicionar lógica para enviar os dados do formulário para um servidor, se necessário
+
+            // Exibe a mensagem de sucesso
+            document.getElementById('mensagemSucesso').style.display = 'block';
+
+            // Limpa os campos do formulário
+            document.getElementById('formCadastro').reset();
+        }
+    </script>
+
+</body>
+</html>
+
